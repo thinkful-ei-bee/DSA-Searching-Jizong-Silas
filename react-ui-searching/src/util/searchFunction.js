@@ -3,35 +3,41 @@ const SearchAlgo = {
 
 
 LinearSearch(array, value) {
+    
     for (let i = 0; i < array.length; i++) {
+      
         if (array[i] === value) {
             return i;
         }
     }
-    return -1;
+    return array.length;
 },
 
-binarySearch(array, value, start, end) {
+binarySearch(array, value, start, end,count=0) {
   var start = start === undefined ? 0 : start;
   var end = end === undefined ? array.length : end;
-
+  
   if (start > end) {
-      return -1;
+      return [-1,count];
   }
 
   const index = Math.floor((start + end) / 2);
   const item = array[index];
-
-  console.log(start, end);
+  
+  
+  if(start===end){
+    return count
+  }
   if (item === value) {
-      return index;
+      return [index,count];
   }
   else if (item < value) {
-      return SearchAlgo.binarySearch(array, value, index + 1, end);
+      return SearchAlgo.binarySearch(array, value, index + 1, end,count+1);
   }
   else if (item > value) {
-      return SearchAlgo.binarySearch(array, value, start, index - 1);
+      return SearchAlgo.binarySearch(array, value, start, index - 1,count+1);
   }
+  
   }
 }
 
