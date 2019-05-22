@@ -1,5 +1,3 @@
-import React from 'react'
-
 function BinarySearch(array, value, start, end) {
   var start = start === undefined ? 0 : start;
   var end = end === undefined ? array.length : end;
@@ -24,3 +22,6 @@ function BinarySearch(array, value, start, end) {
 }
 
 export default BinarySearch;
+
+// const sorted = [3,4,6,8,11,12,14,16,17,18];
+// console.log(BinarySearch(sorted, 14));
