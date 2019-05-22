@@ -11,8 +11,10 @@ state = {
 
 render(){
   
-  console.log(this.state.data,'test data')
-  
+  //console.log(this.state.data,'test data')
+  const linear = SearchAlgo.LinearSearch(this.state.data,34)
+  const binaryT = SearchAlgo.binarySearch(this.state.data,34)
+  console.log(typeof linear,typeof binaryT,'test algo')
 
   return (
     <div className="App">
